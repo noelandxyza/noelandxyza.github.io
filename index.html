@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -40,8 +39,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
 .logo{font-size:1.45rem;font-weight:700;color:var(--green-dark);display:flex;align-items:center;gap:8px}
 .logo span{color:var(--gold)}
-nav ul{display:flex;gap:28px;list-style:none}
-nav a{font-weight:500;font-size:.93rem;transition:.2s}
+nav ul{display:flex;gap:22px;list-style:none}
+nav a{font-weight:500;font-size:.9rem;transition:.2s}
 nav a:hover{color:var(--gold)}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:50px;font-weight:600;font-size:.95rem;border:2px solid transparent;cursor:pointer;transition:.25s}
 .btn-wa{background:var(--wa);color:#fff}
@@ -51,6 +50,14 @@ nav a:hover{color:var(--gold)}
 .btn-outline{border-color:#fff;color:#fff}
 .btn-outline:hover{background:#fff;color:var(--green-dark)}
 .burger{display:none;background:none;border:0;font-size:1.8rem;cursor:pointer;color:var(--green-dark)}
+
+/* Control button visibility for mobile (6) vs desktop (7) */
+.desktop-only { display: inline-flex; }
+.mobile-only { display: none; }
+@media(max-width:760px){
+  .desktop-only { display: none !important; }
+  .mobile-only { display: inline-flex !important; }
+}
 
 /* Hero with background photo overlay */
 .hero{
@@ -99,10 +106,29 @@ nav a:hover{color:var(--gold)}
 .card a:hover{color:var(--gold)}
 .center{text-align:center;margin-top:42px}
 
+/* Booking Section */
+.booking-section{background:var(--cream);padding:80px 0}
+.booking-card{background:#fff;max-width:800px;margin:0 auto;padding:40px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.form-group{display:flex;flex-direction:column;gap:8px}
+.form-group.full{grid-column:1 / -1}
+.form-group label{font-size:.9rem;font-weight:600;color:var(--green-dark)}
+.form-group input, .form-group select, .form-group textarea{padding:12px 16px;border:1px solid #dcd6c4;border-radius:10px;font-size:.95rem;font-family:inherit;outline:none;transition:.2s}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,75,.15)}
+
+/* Testimonials */
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testimonial-card{background:#fff;padding:28px;border-radius:18px;box-shadow:0 6px 20px rgba(0,0,0,.05);display:flex;flex-direction:column;justify-content:space-between;transition:.3s}
+.testimonial-card:hover{transform:translateY(-6px)}
+.stars{display:flex;gap:4px;margin-bottom:14px;color:var(--gold)}
+.testimonial-card p{font-size:.92rem;color:var(--muted);margin-bottom:20px;font-style:italic}
+.client-info h4{font-size:1rem;color:var(--green-dark)}
+.client-info span{font-size:.8rem;color:var(--muted)}
+
 /* Why */
-.why{background:var(--cream)}
+.why{background:#fff}
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.why-item{background:#fff;padding:32px 26px;border-radius:18px;box-shadow:0 4px 18px rgba(0,0,0,.06);transition:.3s}
+.why-item{background:var(--cream);padding:32px 26px;border-radius:18px;box-shadow:0 4px 18px rgba(0,0,0,.03);transition:.3s}
 .why-item:hover{transform:translateY(-6px)}
 .why-item .ico{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--green-dark));display:grid;place-items:center;color:#fff;margin-bottom:16px}
 .why-item h3{font-size:1.15rem;color:var(--green-dark);margin-bottom:8px}
@@ -163,6 +189,7 @@ footer a:hover{color:var(--gold)}
   .why-grid{grid-template-columns:repeat(2,1fr)}
   .steps-grid{grid-template-columns:repeat(2,1fr)}
   .about-grid{grid-template-columns:1fr}
+  .testimonials-grid{grid-template-columns:1fr}
 }
 @media(max-width:760px){
   section{padding:60px 0}
@@ -176,6 +203,8 @@ footer a:hover{color:var(--gold)}
   .services-grid{grid-template-columns:1fr 1fr;gap:14px}
   .card .thumb{height:120px}
   .card .body{padding:16px 12px 20px}
+  .form-grid{grid-template-columns:1fr}
+  .booking-card{padding:20px}
 }
 @media(max-width:480px){
   .services-grid,.steps-grid{grid-template-columns:1fr}
@@ -200,13 +229,16 @@ footer a:hover{color:var(--gold)}
       <ul>
         <li><a href="#beranda">Beranda</a></li>
         <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#booking">Booking</a></li>
         <li><a href="#keunggulan">Keunggulan</a></li>
+        <li><a href="#testimoni">Testimoni</a></li>
         <li><a href="#area">Area</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#tentang-kami">Tentang Kami</a></li>
       </ul>
     </nav>
-    <a href="#" class="btn btn-wa wa-link"><i data-lucide="message-circle" style="width:18px; height:18px;"></i> Pesan via WA</a>
+    <!-- TOMBOL WA DESKTOP #1 (Hanya tampil di desktop) -->
+    <a href="#" class="btn btn-wa wa-link desktop-only"><i data-lucide="message-circle" style="width:18px; height:18px;"></i> Pesan via WA</a>
     <button class="burger" id="burger" aria-label="Menu"><i data-lucide="menu"></i></button>
   </div>
 </header>
@@ -220,7 +252,8 @@ footer a:hover{color:var(--gold)}
     <p>Layanan pijat &amp; SPA panggilan profesional, buka 24 jam. Rasakan relaksasi terbaik langsung di tempat Anda — rumah, hotel, apartemen, maupun kos.</p>
     <div class="actions">
       <a href="#layanan" class="btn btn-gold"><i data-lucide="list-tree" style="width:18px;height:18px;"></i> Pilih Layanan</a>
-      <a href="#" class="btn btn-wa wa-link"><i data-lucide="message-circle" style="width:18px;height:18px;"></i> Pesan Sekarang</a>
+      <!-- TOMBOL WA DESKTOP #2 (Hanya tampil di desktop) -->
+      <a href="#" class="btn btn-wa wa-link desktop-only"><i data-lucide="message-circle" style="width:18px;height:18px;"></i> Pesan Sekarang</a>
     </div>
     <div class="badges">
       <span><i data-lucide="clock" style="width:16px;height:16px;"></i> Buka 24 Jam</span>
@@ -243,7 +276,8 @@ footer a:hover{color:var(--gold)}
       <p>Hubungi kami kapan saja — pesanan Anda kami layani dengan cepat, ramah, dan profesional.</p>
       <div class="note"><b>Catatan:</b> Layanan pijat kesehatan profesional murni. Mohon maaf, kami tidak menyediakan foto-foto terapis.</div>
       <div class="actions">
-        <a href="#" class="btn btn-wa wa-link"><i data-lucide="message-circle" style="width:18px;height:18px;"></i> Pesan</a>
+        <!-- TOMBOL WA DESKTOP #3 (Hanya tampil di desktop) -->
+        <a href="#" class="btn btn-wa wa-link desktop-only"><i data-lucide="message-circle" style="width:18px;height:18px;"></i> Pesan</a>
         <a href="tel:62895328768282" class="btn btn-green"><i data-lucide="phone" style="width:18px;height:18px;"></i> Reservasi</a>
       </div>
     </div>
@@ -288,7 +322,59 @@ footer a:hover{color:var(--gold)}
         <div class="body"><h3>Body Scrub</h3><p>Lulur &amp; scrub alami untuk mengangkat sel kulit mati dan membuat kulit segar.</p><a href="#" class="wa-link">Pesan <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></a></div>
       </div>
     </div>
-    <div class="center"><a href="#" class="btn btn-wa wa-link"><i data-lucide="message-circle" style="width:18px;height:18px;"></i> PESAN SEKARANG</a></div>
+    <div class="center">
+      <!-- TOMBOL WA #4 (Tampil di Desktop & Mobile) -->
+      <a href="#" class="btn btn-wa wa-link"><i data-lucide="message-circle" style="width:18px;height:18px;"></i> PESAN SEKARANG</a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING SECTION -->
+<section class="booking-section" id="booking">
+  <div class="container">
+    <div class="section-title reveal">
+      <small>Reservasi Online</small>
+      <h2>Formulir Booking Cepat</h2>
+      <p>Isi detail pesanan di bawah ini dan Anda akan langsung terhubung ke WhatsApp admin kami.</p>
+    </div>
+    <div class="booking-card reveal">
+      <form id="bookingForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="bName">Nama Lengkap</label>
+            <input type="text" id="bName" required placeholder="Masukkan nama Anda">
+          </div>
+          <div class="form-group">
+            <label for="bService">Pilih Layanan</label>
+            <select id="bService" required>
+              <option value="" disabled selected>-- Pilih Layanan --</option>
+              <option value="Pijat Tradisional">Pijat Tradisional</option>
+              <option value="Couple Massage">Couple Massage</option>
+              <option value="Pijat Refleksi">Pijat Refleksi</option>
+              <option value="Body Scrub">Body Scrub</option>
+              <option value="Full Body Massage">Full Body Massage</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="bDuration">Durasi</label>
+            <select id="bDuration" required>
+              <option value="60 Menit">60 Menit</option>
+              <option value="90 Menit">90 Menit</option>
+              <option value="120 Menit">120 Menit</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="bTime">Waktu Kedatangan</label>
+            <input type="text" id="bTime" placeholder="Contoh: Segera / Jam 19.00" required>
+          </div>
+          <div class="form-group full">
+            <label for="bAddress">Alamat Lengkap / Lokasi (Hotel / Kos / Rumah)</label>
+            <textarea id="bAddress" rows="3" placeholder="Sebutkan nama jalan, nomor, atau nama hotel/kos dan nomor kamar" required></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-wa" style="width:100%;justify-content:center;padding:14px;"><i data-lucide="send" style="width:18px;height:18px;"></i> Kirim Pesanan via WhatsApp</button>
+      </form>
+    </div>
   </div>
 </section>
 
@@ -306,6 +392,67 @@ footer a:hover{color:var(--gold)}
       <div class="why-item reveal"><div class="ico"><i data-lucide="lock"></i></div><h3>Keamanan &amp; Privasi</h3><p>Privasi Anda prioritas kami. Setiap sesi dilakukan dengan profesional dan penuh kehati-hatian.</p></div>
       <div class="why-item reveal"><div class="ico"><i data-lucide="smile"></i></div><h3>Pengalaman Memuaskan</h3><p>Kami berusaha melampaui ekspektasi Anda di setiap sesi, dari awal hingga akhir.</p></div>
       <div class="why-item reveal"><div class="ico"><i data-lucide="badge-percent"></i></div><h3>Harga Terjangkau</h3><p>Tarif kompetitif dan transparan, tanpa biaya tambahan tersembunyi.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background:var(--cream)" id="testimoni">
+  <div class="container">
+    <div class="section-title reveal">
+      <small>Testimoni Pelanggan</small>
+      <h2>Apa Kata Mereka?</h2>
+      <p>Kepuasan pelanggan adalah bukti nyata kualitas pelayanan kami.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div>
+          <div class="stars">
+            <i data-lucide="star" style="width:18px;height:18px;fill:var(--gold)"></i>
+            <i data-lucide="star" style="width:18px;height:18px;fill:var(--gold)"></i>
+            <i data-lucide="star" style="width:18px;height:18px;fill:var(--gold)"></i>
+            <i data-lucide="star" style="width:18px;height:18px;fill:var(--gold)"></i>
+            <i data-lucide="star" style="width:18px;height:18px;fill:var(--gold)"></i>
+          </div>
+          <p>"Terapisnya sangat profesional dan datang tepat waktu ke hotel saya di Malioboro. Pegal-pegal langsung hilang, pijatannya mantap!"</p>
+        </div>
+        <div class="client-info">
+          <h4>Budi Santoso</h4>
+          <span>Wisatawan / Jogja</span>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div>
+          <div class="stars">
+            <i data-lucide="star" style="width:18px;height:18px;fill:var(--gold)"></i>
+            <i data-lucide="star" style="width:18px;height:18px;fill:var(--gold)"></i>
+            <i data-lucide="star" style="width:18px;height:18px;fill:var(--gold)"></i>
+            <i data-lucide="star" style="width:18px;height:18px;fill:var(--gold)"></i>
+            <i data-lucide="star" style="width:18px;height:18px;fill:var(--gold)"></i>
+          </div>
+          <p>"Sangat membantu saat capek kerja di kosan daerah Sleman. Tinggal chat WhatsApp, tidak sampai 30 menit terapis sudah datang. Recommended!"</p>
+        </div>
+        <div class="client-info">
+          <h4>Siti Rahma</h4>
+          <span>Karyawan Swasta</span>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div>
+          <div class="stars">
+            <i data-lucide="star" style="width:18px;height:18px;fill:var(--gold)"></i>
+            <i data-lucide="star" style="width:18px;height:18px;fill:var(--gold)"></i>
+            <i data-lucide="star" style="width:18px;height:18px;fill:var(--gold)"></i>
+            <i data-lucide="star" style="width:18px;height:18px;fill:var(--gold)"></i>
+            <i data-lucide="star" style="width:18px;height:18px;fill:var(--gold)"></i>
+          </div>
+          <p>"Pesanan couple massage untuk di rumah bersama istri sangat memuaskan. Pelayanan ramah, bersih, dan harganya juga terjangkau."</p>
+        </div>
+        <div class="client-info">
+          <h4>Ahmad Fauzi</h4>
+          <span>Wiraswasta</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -398,6 +545,7 @@ footer a:hover{color:var(--gold)}
   <div class="container reveal">
     <h2>Siap Rileks Hari Ini?</h2>
     <p>Dapatkan harga spesial untuk pemesanan hari ini — kuota terbatas.</p>
+    <!-- TOMBOL WA #5 (Tampil di Desktop & Mobile) -->
     <a href="#" class="btn btn-wa wa-link" style="font-size:1.05rem;padding:15px 36px"><i data-lucide="message-circle" style="width:20px;height:20px;"></i> Chat WhatsApp Sekarang</a>
     <div class="num"><i data-lucide="phone" style="width:18px;height:18px;vertical-align:middle;display:inline;"></i> 0895-3287-68282</div>
   </div>
@@ -415,7 +563,9 @@ footer a:hover{color:var(--gold)}
         <ul>
           <li><a href="#beranda">Beranda</a></li>
           <li><a href="#layanan">Layanan</a></li>
+          <li><a href="#booking">Booking</a></li>
           <li><a href="#keunggulan">Keunggulan</a></li>
+          <li><a href="#testimoni">Testimoni</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
@@ -423,6 +573,7 @@ footer a:hover{color:var(--gold)}
         <h4>Kontak</h4>
         <ul>
           <li><i data-lucide="phone" style="width:16px;height:16px;"></i> <a href="tel:62895328768282">0895-3287-68282</a></li>
+          <!-- TOMBOL WA #6 (Tampil di Desktop & Mobile) -->
           <li><i data-lucide="message-circle" style="width:16px;height:16px;"></i> <a href="#" class="wa-link">WhatsApp Admin</a></li>
           <li><i data-lucide="clock" style="width:16px;height:16px;"></i> Buka 24 Jam</li>
         </ul>
@@ -432,7 +583,8 @@ footer a:hover{color:var(--gold)}
   </div>
 </footer>
 
-<a href="#" class="float-wa wa-link" aria-label="Chat WhatsApp">
+<!-- TOMBOL WA FLOATING #7 (Hanya tampil di desktop. Di mobile disembunyikan agar pas 6 tombol) -->
+<a href="#" class="float-wa wa-link desktop-only" aria-label="Chat WhatsApp">
   <i data-lucide="message-circle"></i>
 </a>
 
@@ -447,6 +599,27 @@ footer a:hover{color:var(--gold)}
 
   document.querySelectorAll(".wa-link").forEach(function(a){
     a.href = waURL; a.target = "_blank"; a.rel = "noopener";
+  });
+
+  // Handle Form Booking / Reservasi
+  document.getElementById("bookingForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var name = document.getElementById("bName").value;
+    var service = document.getElementById("bService").value;
+    var duration = document.getElementById("bDuration").value;
+    var time = document.getElementById("bTime").value;
+    var address = document.getElementById("bAddress").value;
+
+    var customText = "Halo Noelandxyza Massage, saya ingin melakukan reservasi:\n\n" +
+                     "• Nama: " + name + "\n" +
+                     "• Layanan: " + service + "\n" +
+                     "• Durasi: " + duration + "\n" +
+                     "• Waktu: " + time + "\n" +
+                     "• Alamat/Lokasi: " + address + "\n\n" +
+                     "Mohon konfirmasi ketersediaan terapis. Terima kasih.";
+
+    var customWaURL = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(customText);
+    window.open(customWaURL, "_blank");
   });
 
   // Menu mobile
