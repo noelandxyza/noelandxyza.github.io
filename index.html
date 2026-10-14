@@ -56,16 +56,27 @@ section{padding:85px 0}
 .promo button:hover{transform:translateY(-50%) scale(1.2); color:var(--gold);}
 @keyframes slideDownPromo { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
-/* Header */
+/* Header & Desktop 4 Main Navigation + Dropdown */
 header{position:sticky;top:0;z-index:50;background:var(--header-bg);backdrop-filter:blur(12px);box-shadow:0 4px 20px rgba(0,0,0,.08); transition: var(--transition);}
 .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
 .logo{font-size:1.4rem;font-weight:700;color:var(--green-dark);display:flex;align-items:center;gap:8px; transition: transform 0.3s;}
 [data-theme="dark"] .logo{color:#fff;}
 .logo:hover{transform: scale(1.02);}
 .logo span{color:var(--gold)}
+
 nav ul{display:flex;gap:18px;list-style:none; align-items: center;}
-nav a{font-weight:500;font-size:.9rem;transition: color 0.3s ease, transform 0.2s;}
+nav a{font-weight:500;font-size:.9rem;transition: color 0.3s ease, transform 0.2s; display:inline-flex; align-items:center; gap:6px;}
 nav a:hover{color:var(--gold); transform: translateY(-2px);}
+
+/* Desktop Dropdown for other menu items */
+.nav-dropdown { position: relative; display: inline-block; }
+.nav-dropdown-btn { background: none; border: none; font: inherit; font-weight: 500; font-size: .9rem; color: var(--text); cursor: pointer; display: inline-flex; align-items: center; gap: 6px; padding: 6px 0; transition: color 0.3s; }
+.nav-dropdown-btn:hover { color: var(--gold); }
+.nav-dropdown-content { display: none; position: absolute; top: 100%; right: 0; background: var(--card-bg); min-width: 220px; box-shadow: 0 12px 30px rgba(0,0,0,0.15); border-radius: 12px; border: 1px solid var(--border-color); padding: 10px 0; z-index: 100; animation: fadeInTab 0.3s ease; }
+.nav-dropdown:hover .nav-dropdown-content { display: block; }
+.nav-dropdown-content li { width: 100%; }
+.nav-dropdown-content a { padding: 10px 18px; display: flex; width: 100%; font-size: .88rem; color: var(--text); }
+.nav-dropdown-content a:hover { background: rgba(201,162,75,0.08); color: var(--gold); transform: none; }
 
 /* Theme Toggle Button */
 .theme-toggle{background:none;border:2px solid var(--border-color);color:var(--text);width:40px;height:40px;border-radius:50%;display:grid;place-items:center;cursor:pointer;transition: var(--transition);}
@@ -152,7 +163,7 @@ nav a:hover{color:var(--gold); transform: translateY(-2px);}
 /* Grid items inside tabs */
 .info-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
 .info-card{background:var(--cream); padding:22px; border-radius:16px; border:1px solid var(--border-color); transition: var(--transition);}
-.info-card:hover{transform:translateY(-50px); border-color:var(--gold); box-shadow:0 10px 25px rgba(0,0,0,0.05);}
+.info-card:hover{transform:translateY(-5px); border-color:var(--gold); box-shadow:0 10px 25px rgba(0,0,0,0.05);}
 .info-card h4{color:var(--green-dark); font-size:1.1rem; margin-bottom:8px; display:flex; align-items:center; gap:8px;}
 [data-theme="dark"] .info-card h4{color:var(--gold);}
 .info-card p{font-size:.92rem; color:var(--muted); margin-bottom:12px;}
@@ -322,6 +333,8 @@ footer a:hover{color:var(--gold)}
   nav li{width: 100%; border-bottom: 1px solid var(--border-color);}
   nav li:last-child{border-bottom: none;}
   nav li a{display:flex; align-items:center; padding:14px 0; font-size: 1rem;}
+  /* Hide desktop dropdown on mobile drawer */
+  .nav-dropdown { display: none; }
   .why-grid,.foot-grid{grid-template-columns:1fr}
   .about-grid{grid-template-columns:1fr; gap:30px}
   .testimonials-grid{grid-template-columns:1fr}
@@ -352,18 +365,36 @@ footer a:hover{color:var(--gold)}
       <i data-lucide="saudi-riyal" style="color:var(--gold); width:26px; height:26px;"></i>
       Noelandxyza <span>Massage</span>
     </a>
+    
+    <!-- DESKTOP NAV: 4 Tombol Utama + Menu Dropdown Lainnya -->
     <nav id="menu">
       <ul>
-        <li><a href="#beranda"><i data-lucide="home" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;"></i>Beranda</a></li>
-        <li><a href="#layanan"><i data-lucide="list-tree" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;"></i>Layanan & Harga</a></li>
-        <li><a href="#fitur-informasi"><i data-lucide="sparkles" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;"></i>Tips & Info</a></li>
-        <li><a href="#booking"><i data-lucide="calendar-check" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;"></i>Booking</a></li>
-        <li><a href="#keunggulan-testimoni"><i data-lucide="star" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;"></i>Keunggulan & Testimoni</a></li>
-        <li><a href="#area"><i data-lucide="map-pin" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;"></i>Area & Alamat</a></li>
-        <li><a href="#faq"><i data-lucide="help-circle" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;"></i>FAQ</a></li>
-        <li><a href="#tentang-kami"><i data-lucide="info" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;"></i>Tentang Kami</a></li>
+        <li><a href="#beranda"><i data-lucide="home" style="width:16px;height:16px;vertical-align:middle;"></i>Beranda</a></li>
+        <li><a href="#layanan"><i data-lucide="list-tree" style="width:16px;height:16px;vertical-align:middle;"></i>Layanan & Harga</a></li>
+        <li><a href="#fitur-informasi"><i data-lucide="sparkles" style="width:16px;height:16px;vertical-align:middle;"></i>Tips & Info</a></li>
+        <li><a href="#booking"><i data-lucide="calendar-check" style="width:16px;height:16px;vertical-align:middle;"></i>Booking</a></li>
+        
+        <!-- Menu Lainnya dalam bentuk Dropdown pada Desktop -->
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-btn">
+            <i data-lucide="menu" style="width:16px;height:16px;vertical-align:middle;"></i> Menu Lainnya <i data-lucide="chevron-down" style="width:14px;height:14px;"></i>
+          </button>
+          <ul class="nav-dropdown-content">
+            <li><a href="#keunggulan-testimoni"><i data-lucide="star" style="width:16px;height:16px;margin-right:6px;"></i>Keunggulan & Testimoni</a></li>
+            <li><a href="#area"><i data-lucide="map-pin" style="width:16px;height:16px;margin-right:6px;"></i>Area & Alamat</a></li>
+            <li><a href="#faq"><i data-lucide="help-circle" style="width:16px;height:16px;margin-right:6px;"></i>FAQ</a></li>
+            <li><a href="#tentang-kami"><i data-lucide="info" style="width:16px;height:16px;margin-right:6px;"></i>Tentang Kami</a></li>
+          </ul>
+        </li>
+
+        <!-- Menu Tambahan untuk Tampilan Mobile (Muncul saat burger dibuka) -->
+        <li class="mobile-only-menu" style="display:none;"><a href="#keunggulan-testimoni"><i data-lucide="star" style="width:16px;height:16px;margin-right:6px;"></i>Keunggulan & Testimoni</a></li>
+        <li class="mobile-only-menu" style="display:none;"><a href="#area"><i data-lucide="map-pin" style="width:16px;height:16px;margin-right:6px;"></i>Area & Alamat</a></li>
+        <li class="mobile-only-menu" style="display:none;"><a href="#faq"><i data-lucide="help-circle" style="width:16px;height:16px;margin-right:6px;"></i>FAQ</a></li>
+        <li class="mobile-only-menu" style="display:none;"><a href="#tentang-kami"><i data-lucide="info" style="width:16px;height:16px;margin-right:6px;"></i>Tentang Kami</a></li>
       </ul>
     </nav>
+
     <div style="display: flex; align-items: center; gap: 12px;">
       <!-- Tombol Toggle Mode Gelap / Terang -->
       <button class="theme-toggle" id="themeToggle" aria-label="Ganti Tema">
@@ -632,7 +663,7 @@ footer a:hover{color:var(--gold)}
             <label for="bName">Nama Lengkap</label>
             <input type="text" id="bName" required placeholder="Masukkan nama Anda">
           </div>
-          <!-- Fitur Pilihan Pelanggan: Pria, Wanita, serta Pria dan Wanita (Kirim ke nomor wanita) -->
+          <!-- Fitur Pilihan Pelanggan: Pria, Wanita, serta Pria dan Wanita -->
           <div class="form-group">
             <label for="bCustomerGender">Pilihan Pelanggan</label>
             <select id="bCustomerGender" required>
@@ -919,7 +950,7 @@ footer a:hover{color:var(--gold)}
   }
 
   themeToggleBtn.addEventListener("click", function() {
-    let theme = document.documentElement.setAttribute("data-theme");
+    let theme = document.documentElement.getAttribute("data-theme");
     if (theme === "dark") {
       document.documentElement.removeAttribute("data-theme");
       localStorage.setItem("theme", "light");
@@ -973,10 +1004,24 @@ footer a:hover{color:var(--gold)}
     });
   });
 
-  // Menu mobile
+  // Menu mobile (mengatur visibilitas menu saat burger diklik)
   var menu = document.getElementById("menu");
-  document.getElementById("burger").addEventListener("click", function(){ menu.classList.toggle("open"); });
-  menu.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ menu.classList.remove("open"); }); });
+  var mobileOnlyItems = document.querySelectorAll(".mobile-only-menu");
+
+  document.getElementById("burger").addEventListener("click", function(){ 
+    menu.classList.toggle("open");
+    // Tampilkan item tambahan di mode mobile drawer
+    mobileOnlyItems.forEach(item => {
+      item.style.display = menu.classList.contains("open") ? "block" : "none";
+    });
+  });
+
+  menu.querySelectorAll("a").forEach(function(a){ 
+    a.addEventListener("click", function(){ 
+      menu.classList.remove("open"); 
+      mobileOnlyItems.forEach(item => item.style.display = "none");
+    }); 
+  });
 
   // FAQ accordion
   document.querySelectorAll(".faq-q").forEach(function(btn){
