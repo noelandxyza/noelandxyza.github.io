@@ -312,14 +312,14 @@ nav a:hover{color:var(--gold);transform:translateY(-2px);}
 .cta .num{font-size:1.2rem;font-weight:600;color:var(--green);margin-top:18px;margin-bottom:14px;}
 [data-theme="dark"] .cta .num{color:#4cd183;}
 
-/* Tombol Donasi Estetik */
-.donation-wrapper{margin-top:16px;}
-.donation-hint{font-size:0.88rem;color:var(--muted);margin-bottom:10px;font-style:italic;}
+/* Tombol Donasi Estetik & Animasi Glowing */
+.donation-wrapper{margin-top:20px;}
+.donation-hint{font-size:0.88rem;color:var(--muted);margin-bottom:12px;font-style:italic;}
 .btn-donate{background:linear-gradient(135deg,var(--gold),#b48d38);color:#fff;border:none;padding:12px 28px;border-radius:50px;font-weight:600;font-size:0.95rem;cursor:pointer;display:inline-flex;align-items:center;gap:8px;box-shadow:0 6px 20px rgba(201,162,75,0.3);transition:var(--transition);animation:pulseDonate 2s infinite;}
 .btn-donate:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 10px 25px rgba(201,162,75,0.45);background:linear-gradient(135deg,#b48d38,var(--gold));}
-@keyframes pulseDonate{0%{box-shadow:0 0 0 0 rgba(201,162,75,0.4)}70%{box-shadow:0 0 0 12px rgba(201,162,75,0)}100%{box-shadow:0 0 0 0 rgba(201,162,75,0)}}
+@keyframes pulseDonate{0%{box-shadow:0 0 0 0 rgba(201,162,75,0.4)}70%{box-shadow:0 0 0 14px rgba(201,162,75,0)}100%{box-shadow:0 0 0 0 rgba(201,162,75,0)}}
 
-/* Modal Popup Donasi */
+/* Modal Popup Donasi (Teks Tujuan Dihilangkan agar Rapi) */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(6px);z-index:999;display:none;align-items:center;justify-content:center;animation:fadeIn 0.3s ease;}
 .modal-overlay.show{display:flex;}
 .modal-box{background:var(--card-bg);border:1px solid var(--border-color);width:min(420px,90%);border-radius:24px;padding:30px;box-shadow:0 20px 50px rgba(0,0,0,0.25);position:relative;animation:fadeInUp 0.3s ease;}
@@ -1007,12 +1007,12 @@ footer a:hover{color:var(--gold)}
     <!-- Fitur Tombol Donasi di Bawah Nomor Telepon -->
     <div class="donation-wrapper">
       <p class="donation-hint">Dukung pengembangan dan perbaikan website ini agar terus memberikan layanan terbaik!</p>
-      <button class="btn-donate" onclick="openDonateModal()"><i data-lucide="heart" style="width:18px;height:18px;"></i> Dukung / Donasi Website</button>
+      <button class="btn-donate" onclick="openDonateModal()"><i data-lucide="heart" style="width:18px;height:18px;"></i> Donasi</button>
     </div>
   </div>
 </section>
 
-<!-- Modal Popup Pilihan Donasi -->
+<!-- Modal Popup Pilihan Donasi (Text Tujuan pada Tombol Dihilangkan) -->
 <div class="modal-overlay" id="donateModal">
   <div class="modal-box">
     <div class="modal-header">
@@ -1024,22 +1024,18 @@ footer a:hover{color:var(--gold)}
       <div class="modal-option-btn" onclick="handleDonationChoice('dana')">
         <i data-lucide="smartphone"></i>
         <span>DANA</span>
-        <small style="font-size:0.75rem;color:var(--muted);">0895328768282</small>
       </div>
       <div class="modal-option-btn" onclick="handleDonationChoice('gopay')">
         <i data-lucide="wallet"></i>
         <span>GoPay</span>
-        <small style="font-size:0.75rem;color:var(--muted);">0895328768282</small>
       </div>
       <div class="modal-option-btn" onclick="handleDonationChoice('saweria')">
         <i data-lucide="coffee"></i>
         <span>Saweria</span>
-        <small style="font-size:0.75rem;color:var(--muted);">saweria.co/Firman354</small>
       </div>
       <div class="modal-option-btn" onclick="handleDonationChoice('sociabuzz')">
         <i data-lucide="heart-handshake"></i>
         <span>SociaBuzz</span>
-        <small style="font-size:0.75rem;color:var(--muted);">sociabuzz.com/.../tribe</small>
       </div>
     </div>
   </div>
@@ -1078,7 +1074,7 @@ footer a:hover{color:var(--gold)}
 </footer>
 
 <button class="livechat-btn" id="liveChatBtn" aria-label="Buka Live Chat Bot">
-  <i data-lucide="message-square-code" style="width:24px;height:24px;"></i>
+  <i data-lucide="bot-message-square" style="width:24px;height:24px;"></i>
 </button>
 
 <div class="livechat-box" id="liveChatBox">
@@ -1088,10 +1084,10 @@ footer a:hover{color:var(--gold)}
   </div>
   <div class="livechat-body" id="chatBody">
     <div class="chat-msg bot">
-      Halo! Saya Asisten Pintar Noelandxyza Massage 🤖. Saya memiliki wawasan lengkap seputar layanan pijat profesional 24 jam, informasi seputar Yogyakarta, tempat wisata Jogja, kuliner legendaris, tips kebugaran (gejala & solusi, makanan sehat & manfaatnya), hingga informasi layanan dan kebijakan layanan. Ada yang bisa saya bantu?
+      Halo! Saya Asisten Pintar Noelandxyza Massage 🤖. Saya memiliki wawasan lengkap seputar layanan pijat profesional 24 jam, informasi seputar Yogyakarta, tempat wisata Jogja, kuliner legendaris, tips kebugaran (gejala & solusi, makanan sehat & manfaatnya), hingga informasi layanan dan kebijakan layanan. Ada yang bisa dibantu?
       <div class="chat-quick-dropdown">
         <button class="chat-quick-summary-btn" onclick="toggleQuickOptions()">
-          <i data-lucide="list-filter" style="width:14px;height:14px;"></i> Tanya Instan / Topik Populer ▾
+          <i data-lucide="list-filter" style="width:14px;height:14px;"></i> Tanya Instan ▾
         </button>
         <div class="chat-quick-options" id="chatQuickOptions">
           <span class="chat-chip" onclick="sendQuickQuery('Berapa tarif pijatnya?')">💰 Tarif Pijat</span>
@@ -1173,15 +1169,10 @@ footer a:hover{color:var(--gold)}
 
   function handleDonationChoice(platform){
     closeDonateModal();
-    const targetPhone = "62895328768282";
     if(platform === 'dana'){
-      window.location.href = "tel:*858*" + targetPhone + "#";
-      window.open("https://link.dana.id/", "_blank");
+      window.open("https://m.dana.id/n/link/minta?full_url=https://qr.dana.id/v1/281012012022020339577649", "_blank");
     } else if(platform === 'gopay'){
-      window.open("gojek://gopay", "_blank");
-      setTimeout(() => {
-        alert("Silakan transfer ke nomor GoPay/DANA: " + targetPhone);
-      }, 500);
+      window.open("https://wa.me/62895328768282?text=" + encodeURIComponent("Halo, saya ingin berdonasi via GoPay untuk website Noelandxyza Massage."), "_blank");
     } else if(platform === 'saweria'){
       window.open("https://saweria.co/Firman354", "_blank");
     } else if(platform === 'sociabuzz'){
@@ -1196,7 +1187,7 @@ footer a:hover{color:var(--gold)}
   });
 
   // ============================================================
-  //  BOT ASISTEN KOMPREHENSIF (16 LAYANAN + GEJALA + MAKANAN + INFO)
+  //  BOT ASISTEN (DIPERBAIKI AGAR AKURAT & TIDAK SALAH JAWAB)
   // ============================================================
   const liveChatBtn = document.getElementById("liveChatBtn");
   const liveChatBox = document.getElementById("liveChatBox");
@@ -1212,15 +1203,12 @@ footer a:hover{color:var(--gold)}
     return "<a href='" + waLink(text) + "' target='_blank' style='color:var(--wa);font-weight:bold;text-decoration:underline;'>" + (label||"0856-2135-420") + "</a>";
   }
   function aAnchor(href, label, color){
-    return "<a href='" + href + "' style='color:" + (color||'var(--gold)') + ";text-decoration:underline;'>" + label + "</a>";
+    return "<a href='" + href + "' style='color:" + (color||'var(--gold)') + ';text-decoration:underline;\'>' + label + "</a>";
   }
 
-  // Aturan & Wawasan Diperluas Mencakup Gejala + Solusi, Makanan Sehat + Manfaat, Info Layanan & Kebijakan
+  // Aturan Bot Terstruktur Berdasarkan Prioritas Keyword Khusus
   const RULES = [
-    { keys:["assalamualaikum","salamualaikum","assalamu'alaikum","wasalam","punteun","punten","selamat pagi","pagi min","pagi admin","pagi kak","pagi gan","pagi bro","met pagi","selamat siang","siang min","siang admin","siang kak","met siang","selamat sore","sore min","sore admin","sore kak","met sore","selamat malam","malam min","malam admin","malam kak","met malam","halo","hallo","helo","hello","hai","hi ","hi?","hey","oy","woi","permisi","numpang tanya","nanya","mau tanya","mau nanya","tanya dong","tanya min","terima kasih","makasih","thanks","thank you","thx","mksh","tengkyu","suwun","maturnuwun","bye","selamat tinggal","sampai jumpa","pamit","apa kabar","gimana kabarnya","sehat","lagi apa","sibuk apa"],
-      reply: () => "Halo! 👋 Selamat datang di <b>Asisten Pintar Noelandxyza Massage</b>. Saya siap membantu menjawab pertanyaan seputar 16 layanan pijat profesional, informasi gejala & solusi tubuh, rekomendasi makanan sehat & manfaatnya, informasi layanan & kebijakan, hingga pariwisata Yogyakarta. Ada yang bisa dibantu?" },
-
-    // Gejala + Solusi
+    // 1. Gejala & Solusi
     { keys:["gejala","solusi","badan pegal","kaku","susah tidur","insomnia","nyeri otot","masuk angin","kembung","meriang"],
       reply: () => "🩺 <b>Panduan Gejala & Solusi Tepat:</b><br>" +
                    "• <b>Badan Pegal & Kaku:</b> Punggung/leher tegang akibat aktivitas duduk lama. <i>Solusi: Pijat Tradisional atau Pijat + Kerok (60-90 menit).</i><br>" +
@@ -1228,7 +1216,7 @@ footer a:hover{color:var(--gold)}
                    "• <b>Nyeri Otot Olahraga:</b> Otot tegang pasca olahraga berat. <i>Solusi: MCO (Massage Cidera Olahraga) / Akupuntur.</i><br>" +
                    "• <b>Masuk Angin & Kembung:</b> Meriang dan badan dingin. <i>Solusi: Pijat + Kerok Hangat atau Terapi Bekam.</i><br><br>Konsultasikan keluhan Anda via " + aWa("Halo admin, saya ingin konsultasi keluhan badan saya.") },
 
-    // Makanan Sehat + Manfaatnya
+    // 2. Makanan Sehat & Manfaatnya
     { keys:["makanan sehat","manfaat","teh","madu","pisang","air putih","lemon","kacang hijau","jahe","nutrisi","vitamin"],
       reply: () => "🥗 <b>Rekomendasi Makanan/Minuman Sehat & Manfaatnya:</b><br>" +
                    "• <b>Teh Hangat dengan Madu:</b> Antioksidan alami untuk menenangkan tenggorokan, meningkatkan daya tahan tubuh, dan merilekskan saraf.<br>" +
@@ -1236,7 +1224,7 @@ footer a:hover{color:var(--gold)}
                    "• <b>Air Putih Hangat / Lemon:</b> Hidrasi esensial untuk mendetoksifikasi tubuh (membuang racun) setelah sirkulasi darah dilancarkan.<br>" +
                    "• <b>Kacang Hijau & Jahe Hangat:</b> Menghangatkan tubuh, meredakan peradangan otot, dan menyegarkan fisik." },
 
-    // Informasi Layanan & Kebijakan
+    // 3. Info Layanan & Kebijakan
     { keys:["kebijakan","aturan","syarat","ketentuan","privacy","privasi","etika","operasional","panggilan","area"],
       reply: () => "ℹ️ <b>Informasi Layanan & Kebijakan Penting:</b><br>" +
                    "• <b>Jam Operasional:</b> Buka 24 Jam nonstop setiap hari tanpa libur di Yogyakarta.<br>" +
@@ -1244,7 +1232,13 @@ footer a:hover{color:var(--gold)}
                    "• <b>Kebijakan Pembatalan:</b> Gratis pembatalan jika dilakukan sebelum terapis berangkat menuju lokasi.<br>" +
                    "• <b>Kode Etik:</b> 100% Murni layanan pijat kesehatan fisik profesional. Tidak menerima layanan plus-plus dalam bentuk apapun.<br><br>Hubungi admin untuk info lebih lanjut di " + aWa("Halo, saya ingin tahu informasi dan kebijakan layanan.") },
 
-    // Penjelasan Detail 16 Layanan
+    // 4. Paket Bundling Hemat
+    { keys:["bundling","paket","hemat","komplet","bugar"],
+      reply: () => "🎁 <b>Paket Bundling Spesial Kami:</b><br>" +
+                   "• <b>Paket Komplet (Pijat + Refleksi - 120 Menit):</b> Rp 350k (Hemat dari Rp 400k). Kombinasi sempurna melemaskan otot kaku dan menyegarkan stamina.<br>" +
+                   "• <b>Paket Bugar (Pijat + Kerok + Scrub - 120 Menit):</b> Rp 300k (Hemat dari Rp 350k). Solusi total usir masuk angin, pegal, dan haluskan kulit.<br><br>Pesan paket bundling ini via " + aWa("Halo, saya ingin pesan Paket Bundling.") },
+
+    // Penjelasan 16 Layanan
     { keys:["circullo","pijat circullo"],
       reply: () => "✨ <b>1. Pijat Circullo Massage:</b><br>Teknik pijat khusus yang berfokus pada kelancaran peredaran darah, mengendurkan ketegangan otot secara menyeluruh, serta mengembalikan vitalitas tubuh." },
     { keys:["kerok","kerokan","masuk angin","+ kerok"],
@@ -1294,8 +1288,9 @@ footer a:hover{color:var(--gold)}
     { keys:["booking","pesan","order","reservasi","panggil","cara pesan","bayar","transfer","qris","cod","tunai"],
       reply: () => "📅 <b>Cara Pemesanan & Pembayaran:</b><br>1. Isi " + aAnchor("#booking","Formulir Booking Cepat") + " atau chat WhatsApp admin di " + aWa("Halo, saya mau booking terapis.") + "<br>2. Informasikan jenis layanan, durasi, dan alamat lengkap.<br>3. Terapis meluncur ke lokasi (≤ 30 menit).<br>4. <b>Pembayaran:</b> Bisa Tunai/COD langsung ke terapis setelah selesai, atau via Transfer/QRIS." },
 
-    { keys:["apa","siapa","dimana","kapan","mengapa","kenapa","bagaimana","gimana","tolong","bantu","cari","tahu","cerita","pendapat","menurut","kamu","bot","ai","halo","hai","iya","tidak","ok","oke","siap","mantap","keren","bagus","test","uji"],
-      reply: () => "Terima kasih banyak atas pertanyaannya! 🙏 Sebagai Asisten Pintar Noelandxyza Massage, saya siap membantu seputar 16 menu layanan pijat 24 jam, informasi gejala & solusi, makanan sehat & manfaatnya, info layanan & kebijakan, pariwisata Jogja, dan kuliner.<br><br>Silakan tanyakan hal lain atau hubungi admin kami:<br><br>" + aWa("Halo Admin Noelandxyza Massage, saya ingin bertanya tentang layanan.") }
+    // Sambutan Umum (Hanya dipanggil jika menyapa atau salam)
+    { keys:["assalamualaikum","salamualaikum","assalamu'alaikum","wasalam","punteun","punten","selamat pagi","pagi min","pagi admin","pagi kak","pagi gan","pagi bro","met pagi","selamat siang","siang min","siang admin","siang kak","met siang","selamat sore","sore min","sore admin","sore kak","met sore","selamat malam","malam min","malam admin","malam kak","met malam","halo","hallo","helo","hello","hai","hi ","hi?","hey","oy","woi","permisi","numpang tanya"],
+      reply: () => "Halo! 👋 Selamat datang di <b>Asisten Pintar Noelandxyza Massage</b>. Saya siap membantu menjawab pertanyaan seputar 16 layanan pijat profesional, informasi gejala & solusi tubuh, rekomendasi makanan sehat & manfaatnya, informasi layanan & kebijakan, hingga pariwisata Yogyakarta. Ada yang bisa dibantu?" }
   ];
 
   function getBotReply(queryText){
@@ -1307,11 +1302,11 @@ footer a:hover{color:var(--gold)}
         }
       }
     }
-    return "Pertanyaan yang sangat menarik! 🤖 Basis pengetahuan kami mencakup 16 menu layanan pijat, panduan gejala & solusi, makanan sehat & manfaatnya, informasi layanan & kebijakan, hingga pariwisata Jogja.<br><br>Silakan tanyakan hal lain atau hubungi admin kami untuk bantuan cepat via WhatsApp:<br><br>" + aWa("Halo Admin, saya ingin berdiskusi mengenai: " + queryText);
+    return "Pertanyaan yang sangat menarik! 🤖 Basis pengetahuan kami mencakup 16 menu layanan pijat, panduan gejala & solusi, makanan sehat & manfaatnya, informasi layanan & kebijakan, hingga pariwisata Jogja.<br><br>Silakan tanyakan hal lain atau hubungi admin kami untuk bantuan cepat via WhatsApp:<br><br>" + aWa("Halo Admin Noelandxyza Massage, saya ingin bertanya tentang: " + queryText);
   }
 
   // ============================================================
-  //  RENDER CHAT & RESET PERCAKAPAN OTOMATIS SAAT KELUAR
+  //  RENDER CHAT & RESET PERCAKAPAN
   // ============================================================
   const CHAT_SESSION_KEY = "noelandxyza_active_chat";
 
@@ -1333,7 +1328,7 @@ footer a:hover{color:var(--gold)}
         Halo! Saya Asisten Pintar Noelandxyza Massage 🤖. Percakapan telah di-reset mulai dari awal. Saya siap membantu seputar 16 menu layanan pijat, gejala & solusi, makanan sehat & manfaatnya, info layanan & kebijakan, serta wisata Jogja. Ada yang bisa dibantu?
         <div class="chat-quick-dropdown">
           <button class="chat-quick-summary-btn" onclick="toggleQuickOptions()">
-            <i data-lucide="list-filter" style="width:14px;height:14px;"></i> Tanya Instan / Topik Populer ▾
+            <i data-lucide="list-filter" style="width:14px;height:14px;"></i> Tanya Instan ▾
           </button>
           <div class="chat-quick-options" id="chatQuickOptions">
             <span class="chat-chip" onclick="sendQuickQuery('Berapa tarif pijatnya?')">💰 Tarif Pijat</span>
