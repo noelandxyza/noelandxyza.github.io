@@ -137,6 +137,28 @@ nav a:hover{color:var(--gold); transform: translateY(-2px);}
 .btn-green{background:var(--green);color:#fff}
 .btn-green:hover{background:var(--green-dark); transform:translateY(-4px); box-shadow:0 10px 25px rgba(47,93,80,0.35);}
 
+/* Interactive Information Tabs Styling */
+.info-tabs-container{background:var(--card-bg); border-radius:24px; border:1px solid var(--border-color); box-shadow:0 15px 40px rgba(0,0,0,0.06); overflow:hidden; margin-top:20px; transition: var(--transition);}
+.tab-headers{display:flex; background:var(--cream); border-bottom:1px solid var(--border-color); overflow-x:auto; scrollbar-width:none;}
+.tab-headers::-webkit-scrollbar{display:none;}
+.tab-btn{flex:1; padding:18px 24px; text-align:center; background:none; border:none; font-size:1rem; font-weight:600; color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; transition: var(--transition); white-space:nowrap; border-bottom:3px solid transparent;}
+.tab-btn:hover{color:var(--green); background:rgba(201,162,75,0.05);}
+.tab-btn.active{color:var(--green-dark); background:var(--card-bg); border-bottom-color:var(--gold);}
+[data-theme="dark"] .tab-btn.active{color:var(--gold);}
+.tab-content{padding:35px; display:none; animation: fadeInTab 0.5s ease;}
+.tab-content.active{display:block;}
+@keyframes fadeInTab { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Grid items inside tabs */
+.info-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
+.info-card{background:var(--cream); padding:22px; border-radius:16px; border:1px solid var(--border-color); transition: var(--transition);}
+.info-card:hover{transform:translateY(-50px); border-color:var(--gold); box-shadow:0 10px 25px rgba(0,0,0,0.05);}
+.info-card h4{color:var(--green-dark); font-size:1.1rem; margin-bottom:8px; display:flex; align-items:center; gap:8px;}
+[data-theme="dark"] .info-card h4{color:var(--gold);}
+.info-card p{font-size:.92rem; color:var(--muted); margin-bottom:12px;}
+.info-card .solution{font-size:.88rem; color:var(--green); font-weight:600; display:flex; align-items:center; gap:6px;}
+[data-theme="dark"] .info-card .solution{color:#4cd183;}
+
 /* Services & Price List Cards */
 .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .card{background:var(--card-bg);border-radius:18px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,.06);transition: var(--transition);text-align:center; display:flex; flex-direction:column; border: 1px solid var(--border-color);}
@@ -288,6 +310,7 @@ footer a:hover{color:var(--gold)}
   .why-grid{grid-template-columns:repeat(2,1fr)}
   .steps-grid{grid-template-columns:repeat(2,1fr)}
   .price-container{grid-template-columns:1fr}
+  .info-grid{grid-template-columns:1fr;}
 }
 
 @media(max-width:850px){
@@ -326,13 +349,14 @@ footer a:hover{color:var(--gold)}
 <header>
   <div class="container nav">
     <a href="#beranda" class="logo">
-      <i data-lucide="sparkles" style="color:var(--gold); width:26px; height:26px;"></i>
+      <i data-lucide="saudi-riyal" style="color:var(--gold); width:26px; height:26px;"></i>
       Noelandxyza <span>Massage</span>
     </a>
     <nav id="menu">
       <ul>
         <li><a href="#beranda"><i data-lucide="home" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;"></i>Beranda</a></li>
         <li><a href="#layanan"><i data-lucide="list-tree" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;"></i>Layanan & Harga</a></li>
+        <li><a href="#fitur-informasi"><i data-lucide="sparkles" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;"></i>Tips & Info</a></li>
         <li><a href="#booking"><i data-lucide="calendar-check" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;"></i>Booking</a></li>
         <li><a href="#keunggulan-testimoni"><i data-lucide="star" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;"></i>Keunggulan & Testimoni</a></li>
         <li><a href="#area"><i data-lucide="map-pin" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;"></i>Area & Alamat</a></li>
@@ -482,6 +506,113 @@ footer a:hover{color:var(--gold)}
 
     <div class="center" style="margin-top: 40px; text-align: center;">
       <a href="#booking" class="btn btn-wa"><svg style="width:18px;height:18px;fill:currentColor;" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> PESAN LAYANAN SEKARANG</a>
+    </div>
+  </div>
+</section>
+
+<!-- FITUR BARU: TAB GEJALA & SOLUSI, MAKANAN SEHAT, DAN DLL -->
+<section id="fitur-informasi" style="background:var(--cream);">
+  <div class="container">
+    <div class="section-title reveal">
+      <small>Panduan Kesehatan & Informasi</small>
+      <h2>Wawasan Kebugaran & Solusi Tubuh Fit</h2>
+      <p>Pilih tab di bawah untuk melihat referensi gejala tubuh beserta solusinya, makanan sehat pendukung, serta informasi penting lainnya.</p>
+    </div>
+
+    <div class="info-tabs-container reveal">
+      <!-- Tombol Header Tab -->
+      <div class="tab-headers">
+        <button class="tab-btn active" onclick="switchTab(event, 'tab-gejala')">
+          <i data-lucide="activity" style="width:18px;height:18px;"></i> Gejala & Solusi
+        </button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-makanan')">
+          <i data-lucide="apple" style="width:18px;height:18px;"></i> Makanan Sehat & Manfaatnya
+        </button>
+        <button class="tab-btn" onclick="switchTab(event, 'tab-dll')">
+          <i data-lucide="info" style="width:18px;height:18px;"></i> Informasi Lainnya (DLL)
+        </button>
+      </div>
+
+      <!-- Konten Tab 1: Gejala & Solusi -->
+      <div id="tab-gejala" class="tab-content active">
+        <h3 style="margin-bottom:20px; color:var(--green-dark); font-size:1.3rem;">Kenali Tubuh Anda dan Solusi Tepatnya</h3>
+        <div class="info-grid">
+          <div class="info-card">
+            <h4><i data-lucide="alert-circle" style="width:18px;height:18px;color:var(--gold);"></i> Badan Pegal & Kaku</h4>
+            <p>Terasa kaku di area punggung, leher, dan pundak akibat aktivitas harian atau terlalu lama duduk.</p>
+            <div class="solution"><i data-lucide="check-circle-2" style="width:16px;height:16px;"></i> Solusi: Pijat Tradisional atau Pijat + Kerok 60-90 menit.</div>
+          </div>
+          <div class="info-card">
+            <h4><i data-lucide="alert-circle" style="width:18px;height:18px;color:var(--gold);"></i> Susah Tidur / Insomnia</h4>
+            <p>Pikiran penat, sirkulasi darah tidak lancar sehingga membuat tubuh sulit rileks di malam hari.</p>
+            <div class="solution"><i data-lucide="check-circle-2" style="width:16px;height:16px;"></i> Solusi: Pijat Refleksi Telapak Kaki & Totok Wajah.</div>
+          </div>
+          <div class="info-card">
+            <h4><i data-lucide="alert-circle" style="width:18px;height:18px;color:var(--gold);"></i> Nyeri Otot Habis Olahraga</h4>
+            <p>Otot terasa tegang, kram ringan, atau cedera ringan pasca berolahraga berat.</p>
+            <div class="solution"><i data-lucide="check-circle-2" style="width:16px;height:16px;"></i> Solusi: MCO (Massage Cidera Olahraga) / Akupuntur.</div>
+          </div>
+          <div class="info-card">
+            <h4><i data-lucide="alert-circle" style="width:18px;height:18px;color:var(--gold);"></i> Masuk Angin & Perut Kembung</h4>
+            <p>Badan terasa dingin, meriang, sering bersendawa, dan kurang bertenaga.</p>
+            <div class="solution"><i data-lucide="check-circle-2" style="width:16px;height:16px;"></i> Solusi: Pijat + Kerok hangat atau Terapi Bekam.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Konten Tab 2: Makanan Sehat & Manfaatnya -->
+      <div id="tab-makanan" class="tab-content">
+        <h3 style="margin-bottom:20px; color:var(--green-dark); font-size:1.3rem;">Nutrisi Terbaik untuk Pemulihan Tubuh</h3>
+        <div class="info-grid">
+          <div class="info-card">
+            <h4><i data-lucide="check" style="width:18px;height:18px;color:var(--gold);"></i> Teh Hangat dengan Madu</h4>
+            <p>Minuman kaya antioksidan alami yang menenangkan tenggorokan dan sistem pencernaan.</p>
+            <div class="solution"><i data-lucide="sparkle" style="width:16px;height:16px;"></i> Manfaat: Meningkatkan daya tahan tubuh & merilekskan saraf.</div>
+          </div>
+          <div class="info-card">
+            <h4><i data-lucide="check" style="width:18px;height:18px;color:var(--gold);"></i> Pisang & Buah Kaya Kalium</h4>
+            <p>Sumber energi instan yang sangat baik untuk mencegah kram otot setelah aktivitas atau pijat.</p>
+            <div class="solution"><i data-lucide="sparkle" style="width:16px;height:16px;"></i> Manfaat: Mengembalikan elektrolit & fungsi otot optimal.</div>
+          </div>
+          <div class="info-card">
+            <h4><i data-lucide="check" style="width:18px;height:18px;color:var(--gold);"></i> Air Putih Hangat / Lemon</h4>
+            <p>Hidrasi esensial untuk membilas racun (detoksifikasi) setelah sesi pijat atau refleksi.</p>
+            <div class="solution"><i data-lucide="sparkle" style="width:16px;height:16px;"></i> Manfaat: Melancarkan sirkulasi darah & cegah dehidrasi.</div>
+          </div>
+          <div class="info-card">
+            <h4><i data-lucide="check" style="width:18px;height:18px;color:var(--gold);"></i> Kacang Hijau & Jahe Hangat</h4>
+            <p>Kombinasi tradisional yang menghangatkan tubuh dan mengembalikan kebugaran fisik.</p>
+            <div class="solution"><i data-lucide="sparkle" style="width:16px;height:16px;"></i> Manfaat: Meredakan peradangan otot & menyegarkan badan.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Konten Tab 3: Informasi Lainnya (DLL) -->
+      <div id="tab-dll" class="tab-content">
+        <h3 style="margin-bottom:20px; color:var(--green-dark); font-size:1.3rem;">Informasi Tambahan & Kebijakan Layanan</h3>
+        <div class="info-grid">
+          <div class="info-card">
+            <h4><i data-lucide="shield" style="width:18px;height:18px;color:var(--gold);"></i> Kebijakan Privasi & Profesional</h4>
+            <p>Seluruh terapis kami bekerja secara profesional dengan menjunjung tinggi kode etik kesehatan dan kenyamanan klien.</p>
+            <div class="solution"><i data-lucide="info" style="width:16px;height:16px;"></i> 100% Murni Layanan Pijat Kesehatan.</div>
+          </div>
+          <div class="info-card">
+            <h4><i data-lucide="clock" style="width:18px;height:18px;color:var(--gold);"></i> Jadwal Operasional 24 Jam</h4>
+            <p>Kami siaga melayani pemesanan panggilan pagi, siang, sore, hingga tengah malam ke seluruh wilayah Yogyakarta.</p>
+            <div class="solution"><i data-lucide="info" style="width:16px;height:16px;"></i> Selalu buka setiap hari tanpa libur.</div>
+          </div>
+          <div class="info-card">
+            <h4><i data-lucide="map-pin" style="width:18px;height:18px;color:var(--gold);"></i> Jangkauan Area Panggilan</h4>
+            <p>Mencakup seluruh area Kota Yogyakarta, Bantul, Sleman, hotel berbintang, kos-kosan, hingga apartemen.</p>
+            <div class="solution"><i data-lucide="info" style="width:16px;height:16px;"></i> Estimasi kedatangan terapis ≤ 30 menit.</div>
+          </div>
+          <div class="info-card">
+            <h4><i data-lucide="help-circle" style="width:18px;height:18px;color:var(--gold);"></i> Konsultasi Gratis via WhatsApp</h4>
+            <p>Bingung memilih jenis layanan yang pas dengan keluhan Anda? Silakan hubungi admin kami untuk konsultasi awal.</p>
+            <div class="solution"><i data-lucide="info" style="width:16px;height:16px;"></i> Respon cepat dan ramah 24 jam.</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -720,6 +851,7 @@ footer a:hover{color:var(--gold)}
         <ul>
           <li><a href="#beranda">Beranda</a></li>
           <li><a href="#layanan">Layanan & Harga</a></li>
+          <li><a href="#fitur-informasi">Tips & Info</a></li>
           <li><a href="#booking">Booking</a></li>
           <li><a href="#keunggulan-testimoni">Keunggulan & Testimoni</a></li>
           <li><a href="#area">Area & Alamat</a></li>
@@ -761,6 +893,19 @@ footer a:hover{color:var(--gold)}
     a.href = defaultWaURL; a.target = "_blank"; a.rel = "noopener";
   });
 
+  // Fungsi Tab Interaktif
+  function switchTab(evt, tabId) {
+    const contents = document.querySelectorAll('.tab-content');
+    contents.forEach(content => content.classList.remove('active'));
+
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    document.getElementById(tabId).classList.add('active');
+    evt.currentTarget.classList.add('active');
+    lucide.createIcons();
+  }
+
   // Fitur Toggle Dark/Light Mode
   const themeToggleBtn = document.getElementById("themeToggle");
   const themeIcon = document.getElementById("themeIcon");
@@ -774,7 +919,7 @@ footer a:hover{color:var(--gold)}
   }
 
   themeToggleBtn.addEventListener("click", function() {
-    let theme = document.documentElement.getAttribute("data-theme");
+    let theme = document.documentElement.setAttribute("data-theme");
     if (theme === "dark") {
       document.documentElement.removeAttribute("data-theme");
       localStorage.setItem("theme", "light");
