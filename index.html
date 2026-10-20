@@ -523,9 +523,9 @@ footer a:hover{color:var(--gold)}
         <div class="stat-icon-box"><i data-lucide="users" style="width:24px;height:24px;"></i></div>
         <h3>5.000+</h3><p>Pelanggan Puas</p>
       </div>
-      <div class="stat-item reveal" onclick="openAndQuery('Bagaimana rating google?')">
+      <div class="stat-item reveal" onclick="window.open('https://maps.app.goo.gl/piXed7d1sixcpAgL9?g_st=ac', '_blank')">
         <div class="stat-icon-box"><i data-lucide="star" style="width:24px;height:24px;"></i></div>
-        <h3>4.9/5</h3><p>Rating Google</p>
+        <h3>5.0/5</h3><p>Rating Google Maps</p>
       </div>
       <div class="stat-item reveal" onclick="openAndQuery('Jam operasional?')">
         <div class="stat-icon-box"><i data-lucide="clock" style="width:24px;height:24px;"></i></div>
@@ -969,7 +969,7 @@ footer a:hover{color:var(--gold)}
       <h2>Tempat Tinggal & Cakupan Wilayah Kami</h2>
       <p>Kami siap melayani panggilan langsung ke tempat Anda atau kunjungi lokasi utama kami.</p>
     </div>
-    <div class="address-highlight reveal" onclick="openAndQuery('Alamat dan lokasi utama')">
+    <div class="address-highlight reveal" onclick="window.open('https://maps.app.goo.gl/piXed7d1sixcpAgL9?g_st=ac', '_blank')">
       <i data-lucide="home"></i>
       <div>
         <h4>Lokasi / Tempat Tinggal Utama</h4>
@@ -989,6 +989,9 @@ footer a:hover{color:var(--gold)}
     </div>
     <div class="map reveal">
       <iframe src="https://maps.google.com/maps?q=Jl.+Gedongkiwo+No.13,+Mantrijeron,+Yogyakarta&t=m&z=15&output=embed&iwloc=near" loading="lazy" title="Peta area layanan"></iframe>
+    </div>
+    <div style="text-align:center; margin-top:20px;">
+      <a href="https://maps.app.goo.gl/piXed7d1sixcpAgL9?g_st=ac" target="_blank" class="btn btn-gold"><i data-lucide="map" style="width:18px;height:18px;"></i> Buka Lokasi Lengkap di Google Maps</a>
     </div>
   </div>
 </section>
@@ -1092,6 +1095,7 @@ footer a:hover{color:var(--gold)}
           <li><i data-lucide="phone" style="width:16px;height:16px;"></i> <a href="tel:628562135420">0856-2135-420</a></li>
           <li><i data-lucide="message-circle" style="width:16px;height:16px;"></i> <a href="#booking" class="wa-link track-wa">WhatsApp Admin</a></li>
           <li><i data-lucide="clock" style="width:16px;height:16px;"></i> Buka 05:00 - 22:00</li>
+          <li><i data-lucide="map-pin" style="width:16px;height:16px;"></i> <a href="https://maps.app.goo.gl/piXed7d1sixcpAgL9?g_st=ac" target="_blank" style="color:var(--gold);">Google Maps Ulasan</a></li>
         </ul>
       </div>
     </div>
@@ -1138,7 +1142,7 @@ footer a:hover{color:var(--gold)}
           <span class="chat-chip" onclick="sendQuickQuery('Jam berapa operasional buka dan tutup?')">⏰ Jam Operasional</span>
           <span class="chat-chip" onclick="sendQuickQuery('Apa saja 16 menu layanannya?')">📋 16 Menu Pijat</span>
           <span class="chat-chip" onclick="sendQuickQuery('Jelaskan gejala dan solusi tubuh fit')">🩺 Gejala & Solusi</span>
-          <span class="chat-chip" onclick="sendQuickQuery('Rekomendasi tempat wisata ikonik di Jogja')">🏛️ Wisata Jogja</span>
+          <span class="chat-chip" onclick="window.open('https://maps.app.goo.gl/piXed7d1sixcpAgL9?g_st=ac', '_blank')">📍 Google Maps</span>
           <span class="chat-chip" onclick="sendQuickQuery('Bagaimana cara booking?')">📅 Cara Booking</span>
         </div>
       </div>
@@ -1350,7 +1354,8 @@ footer a:hover{color:var(--gold)}
     { keys:["yogyakarta","jogja","mantrijeron","gedongkiwo","sleman","bantul"],
       reply: () => "📍 <b>Lokasi & Cakupan Wilayah Basecamp:</b><br>" +
                    "• Alamat Utama: Jl. Gedongkiwo No.13, Mantrijeron, Yogyakarta.<br>" +
-                   "• Cakupan Panggilan: Seluruh wilayah Kota Yogyakarta, Kabupaten Sleman, dan Kabupaten Bantul." },
+                   "• Cakupan Panggilan: Seluruh wilayah Kota Yogyakarta, Kabupaten Sleman, dan Kabupaten Bantul.<br>" +
+                   "• <a href='https://maps.app.goo.gl/piXed7d1sixcpAgL9?g_st=ac' target='_blank' style='color:var(--gold);text-decoration:underline;'>🔗 Buka Google Maps Lokasi Kami ↗</a>" },
 
     { keys:["booking","pesan","order","reservasi","panggil"],
       reply: () => "📅 <b>Cara Mudah Melakukan Booking / Reservasi:</b><br>" +
@@ -1404,7 +1409,7 @@ footer a:hover{color:var(--gold)}
             <span class="chat-chip" onclick="sendQuickQuery('Jam berapa operasional buka dan tutup?')">⏰ Jam Operasional</span>
             <span class="chat-chip" onclick="sendQuickQuery('Apa saja 16 menu layanannya?')">📋 16 Menu Pijat</span>
             <span class="chat-chip" onclick="sendQuickQuery('Jelaskan gejala dan solusi tubuh fit')">🩺 Gejala & Solusi</span>
-            <span class="chat-chip" onclick="sendQuickQuery('Rekomendasi tempat wisata ikonik di Jogja')">🏛️ Wisata Jogja</span>
+            <span class="chat-chip" onclick="window.open('https://maps.app.goo.gl/piXed7d1sixcpAgL9?g_st=ac', '_blank')">📍 Google Maps</span>
             <span class="chat-chip" onclick="sendQuickQuery('Bagaimana cara booking?')">📅 Cara Booking</span>
           </div>
         </div>
