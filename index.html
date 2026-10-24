@@ -324,7 +324,7 @@ nav a:hover{color:var(--gold);transform:translateY(-2px);}
 .btn-donate:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 10px 25px rgba(201,162,75,0.45);background:linear-gradient(135deg,#b48d38,var(--gold));}
 @keyframes pulseDonate{0%{box-shadow:0 0 0 0 rgba(201,162,75,0.4)}70%{box-shadow:0 0 0 14px rgba(201,162,75,0)}100%{box-shadow:0 0 0 0 rgba(201,162,75,0)}}
 
-/* Modal Popup Donasi */
+/* Modal Popup Donasi & Informasi */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(6px);z-index:999;display:none;align-items:center;justify-content:center;animation:fadeIn 0.3s ease;}
 .modal-overlay.show{display:flex;}
 .modal-box{background:var(--card-bg);border:1px solid var(--border-color);width:min(420px,90%);border-radius:24px;padding:30px;box-shadow:0 20px 50px rgba(0,0,0,0.25);position:relative;animation:fadeInUp 0.3s ease;}
@@ -419,7 +419,7 @@ footer a:hover{color:var(--gold)}
   .steps-grid{grid-template-columns:repeat(2,1fr)}
   .price-container{grid-template-columns:1fr}
   .info-grid{grid-template-columns:1fr;}
-  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-grid{grid-template-columns:repeat(4,1fr)}
   .bundling-grid,.blog-grid,.tc-grid{grid-template-columns:1fr;}
 }
 @media(max-width:850px){
@@ -439,7 +439,7 @@ footer a:hover{color:var(--gold)}
   .form-grid{grid-template-columns:1fr}
   .booking-card{padding:24px 18px}
   .card .thumb{height:140px}
-  .stats-grid{grid-template-columns:1fr;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
 }
 @media(max-width:480px){
   .services-grid,.steps-grid{grid-template-columns:1fr}
@@ -484,7 +484,12 @@ footer a:hover{color:var(--gold)}
         </li>
       </ul>
     </nav>
-    <div style="display:flex;align-items:center;gap:12px;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <!-- Tombol Informasi Event -->
+      <button class="theme-toggle" id="infoToggle" aria-label="Informasi Event">
+        <i data-lucide="info" style="width:20px;height:20px;"></i>
+      </button>
+      <!-- Tombol Ganti Tema -->
       <button class="theme-toggle" id="themeToggle" aria-label="Ganti Tema">
         <i data-lucide="sun" id="themeIcon" style="width:20px;height:20px;"></i>
       </button>
@@ -1070,6 +1075,28 @@ footer a:hover{color:var(--gold)}
   </div>
 </div>
 
+<!-- Modal Popup Informasi & Event Spesial -->
+<div class="modal-overlay" id="infoModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3><i data-lucide="info" style="width:20px;height:20px;color:var(--gold);"></i> Informasi & Event Spesial</h3>
+      <button class="modal-close" onclick="closeInfoModal()">&times;</button>
+    </div>
+    <p class="modal-desc">Selamat datang di Asmi Massage! Nikmati berbagai penawaran dan event menarik minggu ini:</p>
+    <div style="font-size:0.92rem;color:var(--text);display:flex;flex-direction:column;gap:12px;margin-bottom:20px;">
+      <div style="background:var(--cream);padding:12px 16px;border-radius:12px;border:1px solid var(--border-color);">
+        <b style="color:var(--gold);">🎉 Promo Spesial Hari Ini</b>
+        <p style="margin-top:4px;color:var(--muted);font-size:0.88rem;">Pijat profesional mulai dari <b>Rp 100.000</b>-an dengan terapis berpengalaman dan bersertifikat.</p>
+      </div>
+      <div style="background:var(--cream);padding:12px 16px;border-radius:12px;border:1px solid var(--border-color);">
+        <b style="color:var(--gold);">🎁 Paket Bundling Hemat</b>
+        <p style="margin-top:4px;color:var(--muted);font-size:0.88rem;">Ambil Paket Komplet atau Paket Bugar dan hemat hingga Rp 50.000 untuk durasi 120 menit!</p>
+      </div>
+    </div>
+    <button class="btn btn-gold" onclick="closeInfoModal()" style="width:100%;justify-content:center;">Tutup</button>
+  </div>
+</div>
+
 <footer>
   <div class="container">
     <div class="foot-grid">
@@ -1205,6 +1232,20 @@ footer a:hover{color:var(--gold)}
 
   donateModal.addEventListener("click", function(e){
     if(e.target === donateModal) closeDonateModal();
+  });
+
+  // ============================================================
+  //  MODAL INFORMASI / EVENT JAVASCRIPT
+  // ============================================================
+  const infoModal = document.getElementById("infoModal");
+  const infoToggleBtn = document.getElementById("infoToggle");
+
+  function openInfoModal(){ infoModal.classList.add("show"); }
+  function closeInfoModal(){ infoModal.classList.remove("show"); }
+
+  infoToggleBtn.addEventListener("click", openInfoModal);
+  infoModal.addEventListener("click", function(e){
+    if(e.target === infoModal) closeInfoModal();
   });
 
   // ============================================================
