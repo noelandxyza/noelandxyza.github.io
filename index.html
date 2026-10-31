@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="google-site-verification" content="NEymBV8EccBWbnnZ2_NzvtdOr2zYzbottArCC5yV_0o" />
 <!-- Favicon / Logo di Tab Browser -->
-<link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/noelandxyza/noelandxyza.github.io/refs/heads/main/Asset/logo.jpg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%232f5d50%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27M7 20h10%27/%3E%3Cpath d=%27M12 20v-8%27/%3E%3Cpath d=%27M12 12C12 6 7 4 3 4c0 5 2 8 9 8Z%27/%3E%3Cpath d=%27M12 15c0-5 4-8 9-8 0 5-2 8-9 8Z%27/%3E%3C/svg%3E">
 <title>Asmi Massage - Pijat Panggilan Profesional 24 Jam Yogyakarta</title>
 <meta name="description" content="Asmi Massage: layanan pijat & SPA panggilan profesional di Yogyakarta. Pijat tradisional, refleksi, couple massage, body scrub. Pesan via WhatsApp.">
 <meta name="keywords" content="pijat panggilan jogja, pijat panggilan yogyakarta, spa panggilan jogja, asmi massage, pijat tradisional jogja, pijat refleksi yogyakarta, massage jogja 24 jam, pijat panggilan terdekat, mco jogja, bekam jogja, pijat capek jogja, pijat hotel jogja, pijat panggilan sleman, pijat panggilan bantul, mantrijeron massage, #pijat #massage #pijatpanggilan #spapanggilan #asminimassage #pijatjogja #massagejogja #pijattradisional #pijatrefleksi #pijatpanggilanjogja #spajogja #wisatayogya #kesehatan #relaksasi">
@@ -15,7 +15,7 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Asmi Massage",
-  "image": "https://raw.githubusercontent.com/noelandxyza/noelandxyza.github.io/refs/heads/main/Asset/logo.jpg",
+  "image": "https://asminimassage.xo.je/",
   "@id": "https://asminimassage.xo.je/#localbusiness",
   "url": "https://asminimassage.xo.je/",
   "telephone": "+628562135420",
@@ -40,7 +40,7 @@
 <!-- Open Graph Tags untuk Rich Preview WhatsApp, Telegram, dll -->
 <meta property="og:title" content="Asmi Massage - Pijat Panggilan Profesional Yogyakarta">
 <meta property="og:description" content="Layanan pijat & SPA panggilan ke rumah, hotel, kos, dan apartemen di Yogyakarta. Buka pukul 05:00 - 22:00, terapis berpengalaman.">
-<meta property="og:image" content="https://raw.githubusercontent.com/noelandxyza/noelandxyza.github.io/refs/heads/main/Asset/logo.jpg">
+<meta property="og:image" content="https://asminimassage.xo.je/">
 <meta property="og:url" content="https://asminimassage.xo.je/">
 <meta property="og:type" content="website">
 
@@ -48,7 +48,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Asmi Massage - Pijat Panggilan Profesional Yogyakarta">
 <meta name="twitter:description" content="Layanan pijat & SPA panggilan profesional di Yogyakarta.">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/noelandxyza/noelandxyza.github.io/refs/heads/main/Asset/logo.jpg">
+<meta name="twitter:image" content="https://asminimassage.xo.je/">
 
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
@@ -584,14 +584,47 @@ nav a{position:relative;}
 @keyframes fxRingPulse{0%{transform:scale(.85);opacity:.7}100%{transform:scale(1.7);opacity:0}}
 .section-title h2{cursor:default;}
 @media(prefers-reduced-motion:reduce){#fx-particle-canvas,#fx-cursor-dot,.fx-confetti{display:none !important;}*{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}}
+</style><style>
+/* ===== FX SPECTACULAR v3 — editorial hero, counter preloader, marquee, grain ===== */
+html{overflow-x:hidden;max-width:100%;}
+/* paksa matikan shimmer pada h1 (tidak diizinkan) */
+.hero h1{background:none !important;-webkit-background-clip:initial !important;background-clip:initial !important;-webkit-text-fill-color:initial !important;color:#fff !important;text-shadow:0 4px 12px rgba(0,0,0,.35) !important;}
+/* grain overlay */
+body::after{content:'';position:fixed;inset:0;z-index:99990;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+/* hero split editorial */
+.hero-split{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;text-align:left;position:relative;z-index:2;}
+.hero-left{display:flex;flex-direction:column;align-items:flex-start;}
+.hero-left .hi{display:inline-flex;align-items:center;gap:8px;color:var(--gold);letter-spacing:3px;}
+.hero-left p{max-width:560px;margin-left:0;margin-right:0;text-align:left;}
+.hero-left .actions{justify-content:flex-start;}
+.hero-left .badges{justify-content:flex-start;margin-top:28px;}
+.hero-right{display:flex;flex-direction:column;gap:14px;}
+.hero-stat-card{background:rgba(255,255,255,.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:18px 20px;cursor:pointer;transition:transform .3s cubic-bezier(.16,1,.3,1),border-color .3s;animation:heroStatFloat 5s ease-in-out infinite;}
+.hero-stat-card:hover{transform:translateY(-6px) scale(1.03);border-color:var(--gold);}
+.hero-stat-card b{display:block;font-size:1.7rem;color:var(--gold);font-weight:800;line-height:1.1;}
+.hero-stat-card span{font-size:.8rem;color:#dfe9e4;letter-spacing:.5px;}
+@keyframes heroStatFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+/* underline draw on subjudul */
+.hero-underline{position:relative;display:inline-block;}
+.hero-underline::after{content:'';position:absolute;left:0;bottom:-8px;height:2px;width:100%;background:linear-gradient(90deg,var(--gold),rgba(201,162,75,0));transform:scaleX(0);transform-origin:left;animation:heroUnderlineDraw 1.4s .9s cubic-bezier(.16,1,.3,1) forwards;}
+@keyframes heroUnderlineDraw{to{transform:scaleX(1)}}
+/* scroll indicator */
+.hero-scroll{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:2;color:#fff;opacity:.7;animation:heroScrollBounce 2s ease-in-out infinite;}
+@keyframes heroScrollBounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+/* marquee ticker */
+.fx-marquee{overflow:hidden;white-space:nowrap;background:var(--green-dark);padding:14px 0;border-top:1px solid rgba(201,162,75,.3);border-bottom:1px solid rgba(201,162,75,.3);position:relative;z-index:5;}
+.fx-marquee-track{display:inline-block;animation:fxMarquee 26s linear infinite;}
+.fx-marquee-track span{margin:0 26px;font-size:.82rem;letter-spacing:2px;text-transform:uppercase;color:#e7d9b0;display:inline-flex;align-items:center;gap:8px;font-weight:600;}
+.fx-marquee-track span i{color:var(--gold);}
+@keyframes fxMarquee{to{transform:translateX(-50%)}}
+/* preloader counter */
+#fxCounter{font-size:clamp(3rem,12vw,5.5rem);font-weight:800;color:#fff;position:relative;z-index:2;line-height:1;font-variant-numeric:tabular-nums;text-shadow:0 0 30px rgba(201,162,75,.55);letter-spacing:-2px;}
+@media(max-width:850px){.hero-split{grid-template-columns:1fr;text-align:center;gap:28px;}.hero-left{align-items:center;}.hero-left p{text-align:center;margin-left:auto;margin-right:auto;}.hero-left .actions,.hero-left .badges{justify-content:center;}.hero-right{flex-direction:row;flex-wrap:wrap;justify-content:center;}.hero-stat-card{flex:1;min-width:130px;margin:0 !important;animation:none !important;}.hero-scroll{display:none;}}
+@media(prefers-reduced-motion:reduce){.fx-marquee-track,.hero-stat-card,.hero-scroll,.hero-underline::after{animation:none !important;}body::after{display:none;}}
 </style></head>
 <body>
 
-<div id="fx-preloader">
-  <div class="fx-preloader-ring"><img src="https://raw.githubusercontent.com/noelandxyza/noelandxyza.github.io/refs/heads/main/Asset/logo.jpg" alt="Asmi Massage"></div>
-  <div class="fx-preloader-text" id="fxPreloaderText">ASMI MASSAGE</div>
-  <div class="fx-preloader-bar"></div>
-</div>
+
 <div id="fx-progress"></div>
 <div id="fx-cursor-glow"></div>
 
@@ -605,7 +638,7 @@ nav a{position:relative;}
 <header>
   <div class="container nav">
     <a href="#beranda" class="logo">
-      <img src="https://raw.githubusercontent.com/noelandxyza/noelandxyza.github.io/refs/heads/main/Asset/logo.jpg" alt="Asmi Logo">
+      <i data-lucide="sprout" class="brand-sprout" aria-hidden="true"></i>
       Asmi <span>Massage</span>
     </a>
     <nav id="menu">
@@ -650,9 +683,11 @@ nav a{position:relative;}
   </video>
   <div class="hero-overlay"></div>
   <div class="container">
-    <p class="hi">Selamat Datang..</p>
+    <div class="hero-split">
+    <div class="hero-left">
+    <p class="hi"><i data-lucide="sparkles" style="width:14px;height:14px;vertical-align:middle;"></i> Selamat Datang di Rumah Relaksasi</p>
     <h1>Asmi Massage</h1>
-    <h3>Massage &amp; SPA Panggilan Yogyakarta</h3>
+    <h3 class="hero-underline">Massage &amp; SPA Panggilan Yogyakarta</h3>
     <p>Layanan pijat &amp; SPA panggilan profesional, buka pukul 05.00 - 22.00 WIB. Rasakan relaksasi terbaik langsung di tempat Anda, seperti rumah, hotel, apartemen, maupun kos.</p>
     <div class="actions">
       <a href="#layanan" class="btn btn-gold"><i data-lucide="list-tree" style="width:18px;height:18px;"></i> Pilih Layanan & Harga</a>
@@ -663,27 +698,41 @@ nav a{position:relative;}
       <span onclick="openAndQuery('Berapa lama estimasi terapis datang?')"><i data-lucide="timer" style="width:16px;height:16px;"></i> Datang ≤ 30 Menit</span>
       <span onclick="openAndQuery('Bagaimana kebijakan privasi?')"><i data-lucide="shield-check" style="width:16px;height:16px;"></i> Privasi Terjaga</span>
     </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stat-card welcome-card" style="animation-delay:0s">
+        <b><i data-lucide="heart-handshake"></i></b><span>Selamat Datang</span>
+        <small>Senang bisa membantu Anda</small>
+      </div>
+      <div class="hero-stat-card welcome-card" style="animation-delay:.8s">
+        <b><i data-lucide="coffee"></i></b><span>Luangkan Waktu</span>
+        <small>Berikan jeda untuk diri sendiri</small>
+      </div>
+      <div class="hero-stat-card welcome-card" style="animation-delay:1.6s">
+        <b><i data-lucide="smile"></i></b><span>Rileks & Nyaman</span>
+        <small>Mulai hari dengan lebih santai</small>
+      </div>
+    </div>
+    </div>
+    <div class="hero-scroll"><i data-lucide="mouse" style="width:22px;height:22px;"></i></div>
   </div>
 </section>
+<div class="fx-marquee"><div class="fx-marquee-track"><span><i data-lucide="heart-handshake" style="width:14px;height:14px;"></i> Pijat Tradisional</span><span><i data-lucide="users" style="width:14px;height:14px;"></i> Couple Massage</span><span><i data-lucide="footprints" style="width:14px;height:14px;"></i> Pijat Refleksi</span><span><i data-lucide="sparkle" style="width:14px;height:14px;"></i> Body Scrub</span><span><i data-lucide="droplet" style="width:14px;height:14px;"></i> Bekam</span><span><i data-lucide="dumbbell" style="width:14px;height:14px;"></i> MCO Sport Massage</span><span><i data-lucide="clock" style="width:14px;height:14px;"></i> Buka 05:00 - 22:00</span><span><i data-lucide="user-check" style="width:14px;height:14px;"></i> Terapis Profesional</span><span><i data-lucide="heart-handshake" style="width:14px;height:14px;"></i> Pijat Tradisional</span><span><i data-lucide="users" style="width:14px;height:14px;"></i> Couple Massage</span><span><i data-lucide="footprints" style="width:14px;height:14px;"></i> Pijat Refleksi</span><span><i data-lucide="sparkle" style="width:14px;height:14px;"></i> Body Scrub</span><span><i data-lucide="droplet" style="width:14px;height:14px;"></i> Bekam</span><span><i data-lucide="dumbbell" style="width:14px;height:14px;"></i> MCO Sport Massage</span><span><i data-lucide="clock" style="width:14px;height:14px;"></i> Buka 05:00 - 22:00</span><span><i data-lucide="user-check" style="width:14px;height:14px;"></i> Terapis Profesional</span></div></div>
 
 <div class="stats-section">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat-item reveal" onclick="openAndQuery('Berapa jumlah pelanggan puas?')">
-        <div class="stat-icon-box"><i data-lucide="users" style="width:24px;height:24px;"></i></div>
-        <h3>5.000+</h3><p>Pelanggan Puas</p>
+      <div class="stat-item reveal" onclick="openAndQuery('Bagaimana cara melakukan booking?')">
+        <div class="stat-icon-box"><i data-lucide="calendar-check"></i></div><h3>Booking</h3><p>Mudah & Praktis</p>
       </div>
-      <div class="stat-item reveal" onclick="window.open('https://maps.app.goo.gl/piXed7d1sixcpAgL9?g_st=ac', '_blank')">
-        <div class="stat-icon-box"><i data-lucide="star" style="width:24px;height:24px;"></i></div>
-        <h3>5.0/5</h3><p>Rating Google Maps</p>
+      <div class="stat-item reveal" onclick="openAndQuery('Layanan tersedia di area mana saja?')">
+        <div class="stat-icon-box"><i data-lucide="map-pin"></i></div><h3>Area Luas</h3><p>Rumah, Hotel & Kos</p>
       </div>
-      <div class="stat-item reveal" onclick="openAndQuery('Jam operasional?')">
-        <div class="stat-icon-box"><i data-lucide="clock" style="width:24px;height:24px;"></i></div>
-        <h3>05:00-22:00</h3><p>Jam Operasional</p>
+      <div class="stat-item reveal" onclick="openAndQuery('Bagaimana menjaga privasi pelanggan?')">
+        <div class="stat-icon-box"><i data-lucide="shield-check"></i></div><h3>Privasi</h3><p>Nyaman & Terjaga</p>
       </div>
-      <div class="stat-item reveal" onclick="openAndQuery('Estimasi kedatangan terapis?')">
-        <div class="stat-icon-box"><i data-lucide="zap" style="width:24px;height:24px;"></i></div>
-        <h3>≤ 30 Min</h3><p>Estimasi Kedatangan</p>
+      <div class="stat-item reveal" onclick="openAndQuery('Apa saja metode pembayaran?')">
+        <div class="stat-icon-box"><i data-lucide="wallet"></i></div><h3>Transparan</h3><p>Info Harga & Pembayaran</p>
       </div>
     </div>
   </div>
@@ -2132,5 +2181,247 @@ nav a{position:relative;}
   }catch(err){ if(window.console) console.warn('FXv2:', err); }
 })();
 </script>
+<script>
+(function(){
+  "use strict";
+  try{
+    /* preloader: counter 0 -> 100% */
+    var ctr = document.getElementById('fxCounter');
+    if(ctr){
+      var n = 0;
+      var iv = setInterval(function(){
+        n += Math.random()*9 + 3;
+        if(n >= 100){ n = 100; clearInterval(iv); }
+        ctr.textContent = Math.floor(n) + '%';
+      }, 85);
+    }
+    /* matikan shimmer pada h1 (tidak diizinkan) */
+    var h1el = document.querySelector('.hero h1');
+    if(h1el) h1el.classList.remove('fx-shimmer-text');
+    /* paksa foto about selalu tampil (anti ilang) */
+    var aa = document.querySelector('.about-art');
+    if(aa){
+      aa.style.background = '#1f4036';
+      setTimeout(function(){ aa.style.clipPath = 'none'; aa.classList.add('show'); }, 1200);
+    }
+    if(window.lucide) window.lucide.createIcons();
+  }catch(e){ if(window.console) console.warn('FXv3:', e); }
+})();
+</script>
+
+<style>
+/* UX refinements */
+#fx-preloader,#fxCounter,#fxPreloaderText,.fx-preloader-bar{display:none!important}
+#fx-progress{opacity:.55;height:2px}
+.brand-sprout{width:38px;height:38px;color:var(--gold);stroke-width:1.8;flex:0 0 auto}
+.logo{gap:9px}
+.hero-stat-card,.stat-item{cursor:pointer;touch-action:manipulation}
+button,a,[onclick]{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+button{min-height:40px}
+.modal-overlay{padding:16px;overflow-y:auto}
+.modal-box{max-height:calc(100dvh - 32px);overflow-y:auto}
+.livechat-box{max-height:calc(100dvh - 175px);max-width:calc(100vw - 24px)}
+.livechat-body{min-height:180px;max-height:45dvh;height:320px}
+.livechat-footer input{min-width:0}
+@media(max-width:850px){
+ .hero{min-height:auto;padding:55px 0}
+ .hero-right{width:100%;gap:10px}
+ .hero-stat-card{min-width:0;flex:1 1 28%;padding:15px 10px}
+ .hero-stat-card b{display:grid;place-items:center}
+ .hero-stat-card b svg{width:26px;height:26px}
+ .about-art{aspect-ratio:4/3;height:auto}
+ .about-art img{object-fit:contain!important;object-position:center;background:var(--cream)}
+ .livechat-box{right:12px;bottom:82px;width:calc(100vw - 24px);max-width:420px}
+ .livechat-body{height:min(42dvh,320px)}
+ .modal-options{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+ .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px}
+ .stat-item{padding:22px 12px}
+ .stat-item h3{font-size:1.25rem;overflow-wrap:anywhere}
+ .hero-right{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))}
+ .hero-stat-card{width:100%;min-width:0;padding:14px 6px}
+ .hero-stat-card span{font-size:.75rem;line-height:1.35}
+ .about-art{aspect-ratio:1/1}
+ .about-art img{object-fit:contain!important}
+ .modal-options{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){.fx-orb,.fx-char,.fx-ripple{animation:none!important}}
+</style>
+<script>
+(function(){
+ 'use strict';
+ // Remove remnants of the former loading overlay and prevent delayed FX from recreating it.
+ document.querySelectorAll('#fx-preloader').forEach(function(el){el.remove()});
+ if(window.lucide) window.lucide.createIcons();
+
+ // Restore theme and make clickable controls keyboard-accessible.
+ try{var saved=localStorage.getItem('theme');if(saved==='dark'||saved==='light')document.documentElement.setAttribute('data-theme',saved);}catch(_){}
+ document.querySelectorAll('.hero-stat-card,.stat-item,.badges span,.area-tags span').forEach(function(el){
+   if(!el.hasAttribute('tabindex'))el.setAttribute('tabindex','0');
+   el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}});
+ });
+ // Smooth, subtle entrance for sections without changing layout.
+ if('IntersectionObserver' in window){
+   var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('ux-visible');obs.unobserve(e.target);}})},{threshold:.12});
+   document.querySelectorAll('section:not(.hero),.stats-section').forEach(function(el){el.classList.add('ux-enter');obs.observe(el);});
+ }
+})();
+</script>
+<style>.ux-enter{opacity:.94;transform:translateY(12px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}.ux-enter.ux-visible{opacity:1;transform:none}</style>
+
+
+<style id="asmi-final-refinements">
+  /* Hilangkan seluruh sisa layar loading/progress lama. */
+  #fx-preloader, #fx-progress, #fxCounter, #fxPreloaderText,
+  .fx-preloader-ring, .fx-preloader-bar { display:none !important; }
+
+  /* Pastikan elemen dekoratif tidak pernah menutupi tombol atau tautan. */
+  #fx-cursor-glow, #fx-cursor-dot, #fx-particle-canvas,
+  .fx-orb, .fx-confetti, .fx-ripple { pointer-events:none !important; }
+  button, a, [role="button"], [onclick] {
+    touch-action:manipulation;
+    -webkit-tap-highlight-color:transparent;
+  }
+  button, .modal-close, .livechat-menu-btn, .livechat-dropdown-item,
+  .chat-chip, .chat-quick-summary-btn, .modal-option-btn {
+    position:relative;
+    z-index:2;
+    cursor:pointer;
+  }
+  .modal-overlay { z-index:10000; }
+  .livechat-box { z-index:10001; }
+  .livechat-btn { z-index:10002; }
+  .float-wa { z-index:10002; }
+  header { z-index:100; }
+  .promo { z-index:101; }
+
+  /* Kartu sambutan: bukan daftar fitur, hanya sapaan singkat untuk pengunjung. */
+  .hero-right { align-items:stretch; }
+  .hero-stat-card.welcome-card {
+    min-height:132px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:7px;
+    padding:18px 12px;
+    text-align:center;
+    cursor:default;
+    animation:welcomeFloat 5s ease-in-out infinite;
+  }
+  .hero-stat-card.welcome-card:nth-child(2) { animation-delay:.7s; }
+  .hero-stat-card.welcome-card:nth-child(3) { animation-delay:1.4s; }
+  .hero-stat-card.welcome-card b { display:grid; place-items:center; }
+  .hero-stat-card.welcome-card b svg { width:27px; height:27px; }
+  .hero-stat-card.welcome-card span { font-weight:700; }
+  .hero-stat-card.welcome-card small {
+    color:rgba(255,255,255,.78);
+    font-size:.76rem;
+    line-height:1.35;
+  }
+  @keyframes welcomeFloat {
+    0%,100% { transform:translateY(0); }
+    50% { transform:translateY(-5px); }
+  }
+
+  /* Animasi tambahan yang halus untuk kartu dan tombol. */
+  .card, .why-item, .testimonial-card, .bundling-card, .blog-card,
+  .info-card, .tc-box, .step, .price-table-card {
+    transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+  }
+  button:focus-visible, a:focus-visible, [onclick]:focus-visible {
+    outline:3px solid var(--gold);
+    outline-offset:3px;
+  }
+
+  @media (max-width:850px) {
+    .hero-right { width:100%; }
+    .hero-stat-card.welcome-card { min-width:0; padding:14px 8px; }
+    .hero-stat-card.welcome-card small { font-size:.7rem; }
+    .about-art { height:auto; aspect-ratio:4/3; }
+    .about-art img {
+      width:100%; height:100%;
+      object-fit:contain !important;
+      object-position:center;
+      background:var(--cream);
+    }
+    .livechat-box { max-height:calc(100dvh - 110px); }
+    .livechat-body { max-height:42dvh; }
+  }
+  @media (max-width:520px) {
+    .hero-right { display:grid !important; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
+    .hero-stat-card.welcome-card { min-height:120px; padding:12px 5px; }
+    .hero-stat-card.welcome-card span { font-size:.78rem; line-height:1.2; }
+    .hero-stat-card.welcome-card small { font-size:.65rem; }
+    .about-art { aspect-ratio:4/3; }
+    .about-art img { object-fit:contain !important; }
+    /* Foto layanan tetap utuh di layar kecil, tanpa memotong bagian gambar. */
+    .card .thumb { height:auto; min-height:135px; aspect-ratio:16/9; }
+    .card .thumb img { object-fit:contain !important; background:var(--cream); }
+    .modal-box { width:min(100%,440px); padding:22px 18px; }
+    .livechat-box { right:10px; bottom:78px; width:calc(100vw - 20px); }
+    .float-wa { right:14px; bottom:14px; }
+    .livechat-btn { right:18px; bottom:82px; }
+  }
+  @media (prefers-reduced-motion:reduce) {
+    .hero-stat-card.welcome-card { animation:none !important; }
+    * { scroll-behavior:auto !important; }
+  }
+</style>
+<script id="asmi-final-interactions">
+(function () {
+  'use strict';
+
+  // Bersihkan node loading/progress jika ada script lama yang sempat membuatnya.
+  document.querySelectorAll('#fx-preloader,#fx-progress').forEach(function (node) {
+    node.remove();
+  });
+
+  // Pulihkan preferensi tema tanpa mengambil alih event listener tema yang asli.
+  try {
+    var savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    else if (savedTheme === 'light') document.documentElement.removeAttribute('data-theme');
+  } catch (_) {}
+
+  // Perbarui ikon tema mengikuti tema aktif dan biarkan handler asli bekerja.
+  function syncThemeIcon() {
+    var icon = document.getElementById('themeIcon');
+    if (!icon) return;
+    icon.setAttribute(
+      'data-lucide',
+      document.documentElement.getAttribute('data-theme') === 'dark' ? 'moon' : 'sun'
+    );
+    if (window.lucide) window.lucide.createIcons();
+  }
+  syncThemeIcon();
+  var themeButton = document.getElementById('themeToggle');
+  if (themeButton) {
+    themeButton.addEventListener('click', function () {
+      window.setTimeout(syncThemeIcon, 0);
+    });
+  }
+
+  // Tutup menu navigasi setelah tautan dipilih di layar kecil.
+  var nav = document.getElementById('menu');
+  if (nav) {
+    nav.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', function () { nav.classList.remove('open'); });
+    });
+  }
+
+  // Re-render ikon Lucide setelah modal dibuka atau konten chat berubah.
+  if (window.lucide) window.lucide.createIcons();
+
+  // Cegah kartu sambutan statis ikut terlihat seperti tombol.
+  document.querySelectorAll('.welcome-card').forEach(function (card) {
+    card.removeAttribute('onclick');
+    card.removeAttribute('tabindex');
+    card.setAttribute('aria-label', card.innerText.replace(/\s+/g, ' ').trim());
+  });
+})();
+</script>
+
 </body>
 </html>
